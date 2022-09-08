@@ -7,13 +7,11 @@ function App() {
   const [maxScore, setMaxscore] = useState(0);
 
   useEffect(() => {
-    let portrait = window.matchMedia("(orientation: portrait)");
+    if(window.innerHeight > window.innerWidth){
+      alert("Debes girar el telefono para poder jugar bien este juego")
+  }
 
-    portrait.addEventListener("change", function (e) {
-      if (e.matches) {
-        alert("Debes girar el telefono para poder jugar bien este juego")
-      } 
-    });
+
   }, []);
 
   useEffect(() => {
